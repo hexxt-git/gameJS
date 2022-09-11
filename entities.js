@@ -30,13 +30,11 @@ class Sprite extends Entity{
 class RigidSprite extends Sprite{
     constructor(pos, src, w, h){
         super(pos, src, w, h)
-        this.vel = {x:random(-1,1), y:random(-1,1)}
-        this.velR = random(-0.2,0.2)
+        this.vel = {x:0, y:0}
     }
     update(){
         this.pos.x += this.vel.x
         this.pos.y += this.vel.y
-        this.rot += this.velR
     }
 }
 class StaticSprite extends Sprite{
@@ -79,8 +77,8 @@ class Shape extends Entity{
 class RigidShape extends Shape{
     constructor(pos, rot, color, shape){
         super(pos, rot, color, shape)
-        this.vel = {x:random(-1,1), y:random(-1,1)}
-        this.velR = random(-0.2,0.2)
+        this.vel = {x:0, y:0}
+        this.velR = 0
     }
     update(){
         this.pos.x += this.vel.x

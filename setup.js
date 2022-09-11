@@ -12,7 +12,7 @@ let camera = {
     y: -height/2,
     z: 1,
     isLocked: false,
-    lockedTo: {x: 0, y: 0}
+    lockedTo: {pos:{x: 0, y: 0}}
 }
 
 canvas.width = width

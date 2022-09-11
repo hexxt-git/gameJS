@@ -20,13 +20,13 @@ function loop(){
             camera.y += ( mouse.dy / camera.z ) * mouse.sensitivity
         }
     } else {
-        camera.x = Math.floor(-camera.lockedTo.x)
-        camera.y = Math.floor(-camera.lockedTo.y)
+        camera.x = Math.floor(-camera.lockedTo.pos.x)
+        camera.y = Math.floor(-camera.lockedTo.pos.y)
     }
 
     // simulation
     world.forEach((e)=>{e.update()})
-    
+
     // render
     world.forEach((e)=>{e.render()})
 
@@ -42,7 +42,7 @@ for(let i = 0; i < 30; i++) world.push(new RigidShape( {x:rdm(width), y:rdm(heig
         {x: 0, y: 10},
         {x: -10, y: 15},
     ]))
-for(let i = 0; i < 30; i++) world.push(new RigidSprite( {x:rdm(width), y:rdm(height)}, './image.jpg', random(20, 50), random(20, 50)))
+for(let i = 0; i < 30; i++) world.push(new RigidSprite( {x:rdm(width), y:rdm(height)}, './images/image.jpg', random(20, 50), random(20, 50)))
 
 
 loop()
